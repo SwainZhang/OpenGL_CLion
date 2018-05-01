@@ -5,7 +5,12 @@ find_package(OpenGL REQUIRED)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp )
+set(SOURCE_FILES main.cpp
+        rendertriger.h
+        vertex_shader_render_triger.h
+        hello_trigangle.h
+        shader/shader.h
+        shader/shader_sample.h)
 
 set(GCC_COVERAGE_LINK_FLAGS "-lglfw -lglew")
 set(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")

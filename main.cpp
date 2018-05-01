@@ -1,53 +1,16 @@
 
 #include <iostream>
 
-
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-
-void render(void){
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glBegin(GL_TRIANGLES);
-    {
-        glColor3f(1.0f,0.0f, 0.0f);
-        glVertex2f(0, .5);
-
-        glColor3f(0.0f, 1.0f, 0.0f);
-        glVertex2f(-.5f, -.5f);
-
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(.5f, -.5f);
-    }
-    glEnd();
-    glFlush();
-}
+#include "rendertriger.h"
+#include "hello_trigangle.h"
+#include "shader/shader_sample.h"
 int main(int argc, const char * argv[]) {
-    GLFWwindow *win;
-    if(!glfwInit()){
-        return -1;
-    }
 
-    win = glfwCreateWindow(640, 480, "OpenGL Base Project", NULL, NULL);
-
-    if(!win){
-        glfwTerminate();
-        exit(EXIT_FAILURE);
-    }
-
-    if(!glewInit()){
-        return -1;
-    }
-
-    glfwMakeContextCurrent(win);
-    while(!glfwWindowShouldClose(win)){
-        render();
-        glfwSwapBuffers(win);
-        glfwPollEvents();
-    }
-    glfwTerminate();
-    exit(EXIT_SUCCESS);
-
+    //hello_triangle_main();
+   // render_triger_main(argc,argv);
+    shader_sample_main();
     return 0;
 }
